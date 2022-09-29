@@ -31,4 +31,5 @@ private:
 	UPROPERTY()
 	ANaviCharacter* AICharacter;
 
+	bool DrawDebug = false;
 };

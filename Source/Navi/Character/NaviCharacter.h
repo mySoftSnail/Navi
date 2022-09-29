@@ -67,7 +67,7 @@ public:
 	FORCEINLINE AEnemy* GetInBattleEnemy() const { return InBattleEnemy; }
 	FORCEINLINE void SetInBattleEnemy(AEnemy* _InBattleEnemy) { InBattleEnemy = _InBattleEnemy; }
 	FORCEINLINE float GetAggression() const { return Aggression; }
-	FORCEINLINE float GetBaseDetectRadius() const { return BaseDetectRadius; }
+	FORCEINLINE float GetBaseDetectRadius() const { return MaxDetectRadius; }
 	FORCEINLINE void SetAIController(ANaviAIController* _AIController) { AIController = _AIController; }
 
 public:
@@ -403,10 +403,11 @@ private:
 	ANaviAIController* AIController;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = NaviAI, meta = (AllowPrivateAccess = "true", ClampMin = "0.0", ClampMax = "1.0",UIMin = "0.0", UIMax = "1.0"))
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = NaviAI, meta = (AllowPrivateAccess = "true", ClampMin = "0.0", ClampMax = "1.0", UIMin = "0.0", UIMax = "1.0"))
 	float Aggression = 0.5f;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = NaviAI, meta = (AllowPrivateAccess = "true"))
-	float BaseDetectRadius = 2000.f;
+	float MaxDetectRadius = 2000.f;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = NaviAI, meta = (AllowPrivateAccess = "true"))
 	float HeadAccuracy = 0.5f;

@@ -62,7 +62,7 @@ void UBTService_DetectEnemy::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* 
 				}
 			}
 		}
-		DrawDebugSphere(World, Center, DetectRadius, 32, Color, false, 0.2f);
+		if (DrawDebug) DrawDebugSphere(World, Center, DetectRadius, 32, Color, false, 0.2f);
 		if (!bDetect)
 		{
 			OwnerComp.GetBlackboardComponent()->SetValueAsObject(TEXT("DetectedEnemy"), nullptr);
